@@ -3,14 +3,14 @@ name: Sync and Compile Sing-Box Rules
 on:
   push:
   schedule:
-    - cron: '0 13 * * *'
+    - cron: '30 14 * * *'
   workflow_dispatch:
   
 permissions:
   contents: write
 
 env:
-  SING_BOX_VERSION: 1.12.12
+  SING_BOX_VERSION: 1.12.14
 
 jobs:
   sync_and_compile:
