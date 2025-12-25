@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 env:
-  SING_BOX_VERSION: 1.10.0-beta.4
+  SING_BOX_VERSION: 1.12.12
 
 jobs:
   sync_and_compile:
@@ -57,3 +57,11 @@ jobs:
           git commit -m "Merged sing-box directory from ruleset.skk.moe repository"
           git push
         fi
+        
+    - name: Delete old workflow runs
+      uses: Mattraks/delete-workflow-runs@v2
+      with:
+          token: ${{ github.token }}
+          repository: ZiFuuuuuu/sing-box-ruleset
+          retain_days: 1
+          keep_minimum_runs: 5
